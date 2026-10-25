@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentFilter = "all";
 
-  // Helper: Update Counter
+  
   function updateCounter() {
     if (!todoList) return;
     
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Helper: Apply Current Filter
+ 
   function applyFilter() {
     if (!todoList) return;
     const items = todoList.querySelectorAll("li");
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Helper: Add New Item
+  
   function addItem(text) {
     let val = text;
     if (val === undefined || val === null || (typeof val === "object" && val.target)) {
@@ -88,12 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   }
 
-  // Expose functions globally for Jest test suite
+  
   window.addItem = addItem;
   window.updateCounter = updateCounter;
   window.applyFilter = applyFilter;
 
-  // Form Submit Event
+  
   if (todoForm) {
     todoForm.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Event Delegation on #todo-list
+  
   if (todoList) {
     todoList.addEventListener("click", (event) => {
       const deleteBtn = event.target.closest(".delete-btn, .delete, button");
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Initial Setup
+
   if (errorMsg) {
     errorMsg.hidden = true;
     errorMsg.style.display = "none";
